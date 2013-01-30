@@ -4,10 +4,10 @@
 <%= link_to "Post a New status", new_status_path, class:"btn btn-success" %>
 <% @statuses.each do |status| %>
   <div class = "status">
-    <strong><%=status.name%></strong>
+    <strong><%= status.user.full_name %></strong>
     <p><%=status.content%></p>
     <div class = "meta">
-      <strong><%= link_to time_ago_in_words(status.created_at)+" ago"%>
+      <strong><%= link_to time_ago_in_words(status.created_at)+" ago" , status %>
       <span class = "admin">
         | <%= link_to "Edit",edit_status_path(status)%> |
         <%= link_to "Delete" , status , method: :Delete, data: {confirm: "Are you sure you want to Delete this status"}%></strong>
