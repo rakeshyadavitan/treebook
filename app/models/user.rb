@@ -6,14 +6,15 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me , :first_name, :last_name, :profile_name
+  attr_accessible :email, :password, :password_confirmation, :remember_me , :first_name, :last_name, :profile_name, :id, :created_at, :updated_at
 
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :profile_name, presence: true,
                           uniqueness: true,
                           format:{
-                            with:/a-zA-Z0-9_-/,
+                            # with:/a-zA-Z0-9_-/,
+                            with: /\A[a-zA-Z0-9_-]+\z/,
                             message:'Must be formatted correctly.'
                           }
 

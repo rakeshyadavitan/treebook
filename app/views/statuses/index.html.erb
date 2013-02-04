@@ -2,8 +2,9 @@
   <h1>All of the Status</h1>
 </div>
 <%= link_to "Post a New status", new_status_path, class:"btn btn-success" %>
+
 <% @statuses.each do |status| %>
-  <div class = "status">
+  <div class = "status">      
     <strong><%= status.user.full_name %></strong>
     <p><%=status.content%></p>
     <div class = "meta">
@@ -14,4 +15,6 @@
       </span>
     </div>
   </div>
+
+
 <%end%>

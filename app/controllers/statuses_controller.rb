@@ -1,9 +1,11 @@
 class StatusesController < ApplicationController
+  
+  before_filter :authenticate_user!, only: [:new]
+
   # GET /statuses
   # GET /statuses.json
   def index
-    @statuses = Status.all
-
+    @statuses = Status.all   
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @statuses }

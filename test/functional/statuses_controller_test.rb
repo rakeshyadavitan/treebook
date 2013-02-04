@@ -11,14 +11,21 @@ class StatusesControllerTest < ActionController::TestCase
     assert_not_nil assigns(:statuses)
   end
 
-  test "should get new" do
+  test "should get redirected when not logged in" do
+    get :new
+    assert_response :redirect
+    assert_redirected_to new_user_session_path
+  end
+
+  test 'should render new page when logged in' do
+    sign_in users(:rakesh)
     get :new
     assert_response :success
   end
 
   test "should create status" do
     assert_difference('Status.count') do
-      post :create, status: @status.attributes
+      post :create, status: {content: @status.content}
     end
 
     assert_redirected_to status_path(assigns(:status))
