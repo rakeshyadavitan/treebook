@@ -10,6 +10,12 @@ ravi:
   profile_name: "raviinvalid"
   email: "ravi.teja@tekacademy.com"
 
+vikas:
+  first_name: "vikas"
+  last_name: "v"
+  profile_name: "vikasinvalid"
+  email: "vikas.@tekacademy.com"
+
   
 
   
