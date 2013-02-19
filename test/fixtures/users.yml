@@ -3,6 +3,7 @@ rakesh:
   last_name: "yadav"
   profile_name: "rakeshinvalid"
   email: "rakesh.yadav@tekacademy.com"
+  encrypted_password: "$2a$10$Fh/Hm8RxDsuPTeBUr6864.GARlcmt7zF2WspaXGr3BIv2C27N.osq"
 
 ravi:
   first_name: "ravi"
